@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ajk-5j-9Sq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Drawings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="CoolView" customModule="Drawings" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="26n-Ag-O8P">
+                        <barButtonItem key="rightBarButtonItem" title="color pick" image="pencil.and.outline" catalog="system" id="jCh-Gf-M6X">
+                            <connections>
+                                <segue destination="MUV-gb-Aqb" kind="show" id="qJ9-2y-I25"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="canvasView" destination="8bC-Xf-vdC" id="6iS-Fu-kw8"/>
+                        <outlet property="pickColorButton" destination="jCh-Gf-M6X" id="cJa-hx-UmX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176.8115942028987" y="-295.3125"/>
+        </scene>
+        <!--Color Pick Controller-->
+        <scene sceneID="IbM-eV-klo">
+            <objects>
+                <viewController id="MUV-gb-Aqb" customClass="ColorPickController" customModule="Drawings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qDi-SE-FVD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaQ-3B-APY" customClass="ColorPicker" customModule="Drawings" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2TJ-Wl-iNx" firstAttribute="trailing" secondItem="kaQ-3B-APY" secondAttribute="trailing" id="Cgy-za-91U"/>
+                            <constraint firstItem="2TJ-Wl-iNx" firstAttribute="bottom" secondItem="kaQ-3B-APY" secondAttribute="bottom" constant="20" id="Gkz-gk-WbT"/>
+                            <constraint firstItem="kaQ-3B-APY" firstAttribute="top" secondItem="2TJ-Wl-iNx" secondAttribute="top" id="J0p-93-Fh0"/>
+                            <constraint firstItem="kaQ-3B-APY" firstAttribute="leading" secondItem="2TJ-Wl-iNx" secondAttribute="leading" id="tfq-eo-Bd0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2TJ-Wl-iNx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Txh-Z9-xry"/>
+                    <connections>
+                        <outlet property="cpView" destination="kaQ-3B-APY" id="0gz-0A-Lpw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FFg-jX-nA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2033.3333333333335" y="-295.3125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SWN-gY-IDR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ajk-5j-9Sq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ElA-8W-rBQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nGv-kd-e2Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qa0-9m-hbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266.66666666666669" y="-295.3125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil.and.outline" catalog="system" width="128" height="119"/>
+    </resources>
+</document>
